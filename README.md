@@ -12,15 +12,15 @@ For help docs run ```migrate --help```.
 Generate a migration:
 
 ```
-♪  node-orm-migrate git:(master) ✗ ./bin/migrate -g foo.js
-  create : /Users/nicholasf/code/nicholasf/node-orm-migrate/data/migrations/001-foo.js.js
+♪  node-orm-migrate git:(master) ✗ migrate -g create-foo
+  create : /Users/nicholasf/code/nicholasf/node-orm-migrate/data/migrations/001-create-foo.js
 Done.
 ```
 
 Perform an up run:
 
 ```
-♪  node-orm-migrate git:(master) ✗ ./bin/migrate -u       
+♪  node-orm-migrate git:(master) ✗ migrate -u       
 (orm/postgres) CREATE TABLE "orm_migrations" ("migration" TEXT NOT NULL , "direction" TEXT NOT NULL , "created_at" TEXT NOT NULL )
 (orm/postgres) SELECT migration FROM orm_migrations ORDER BY created_at DESC LIMIT 1;
   up : data/migrations/001-foo.js.js
@@ -33,7 +33,7 @@ Done.
 Perform a down run:
 
 ```
-♪  node-orm-migrate git:(master) ✗ ./bin/migrate -d
+♪  node-orm-migrate git:(master) ✗ migrate -d
 (orm/postgres) CREATE TABLE "orm_migrations" ("migration" TEXT NOT NULL , "direction" TEXT NOT NULL , "created_at" TEXT NOT NULL )
 (orm/postgres) SELECT migration FROM orm_migrations ORDER BY created_at DESC LIMIT 1;
 (orm/postgres) SELECT migration FROM orm_migrations ORDER BY created_at DESC LIMIT 1;
