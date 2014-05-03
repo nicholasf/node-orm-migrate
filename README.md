@@ -33,6 +33,11 @@ Done.
 Perform a down run:
 
 ```
+♪  node-orm-migrate git:(master) ✗ ./bin/migrate -d
+(orm/postgres) CREATE TABLE "orm_migrations" ("migration" TEXT NOT NULL , "direction" TEXT NOT NULL , "created_at" TEXT NOT NULL )
+(orm/postgres) SELECT migration FROM orm_migrations ORDER BY created_at DESC LIMIT 1;
+(orm/postgres) SELECT migration FROM orm_migrations ORDER BY created_at DESC LIMIT 1;
+  down : data/migrations/001-foo.js.js
 (orm/postgres) INSERT INTO orm_migrations(migration, direction, created_at) VALUES('001-foo.js.js', 'down', '2014-05-03T05:42:52.659Z');
   migration : complete
 Done.
