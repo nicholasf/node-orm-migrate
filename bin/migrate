@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var program     = require('commander'),
+    commands    = require('./../lib/commands');
+
+if (!process.env.DB_URL){
+    console.log("Please define a $DB_URL in your env. How else can I know to connect to your database, eh?");
+    process.exit();
+}
+
+program
+  .version('0.0.1')
+  .option('-g, --generate', 'Generate a migration')
+  .option('-u, --up', 'Run up migrations')
+  .option('-d, --down', 'Run down migrations')
+  .option('-f, --file', 'Specify file name')
+  .parse(process.argv);
+
+var finish = function(){
+    console.log("Done.");
+    process.exit();    
+}
+
+if (program.generate)   commands.generate(program.args[0], finish);
+if (program.up)         commands.up(program.args[0], finish);
+if (program.down)       commands.down(program.args[0], finish);
