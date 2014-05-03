@@ -1,6 +1,6 @@
 {
   "name": "orm-migrate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -12,6 +12,8 @@
     "commander": "^2.2.0",
     "migrate-orm2": "^1.2.8",
     "orm": "^2.1.8",
-    "sql-ddl-sync": "^0.1.4"
+    "sql-ddl-sync": "^0.1.4",
+    "pg": "^3.0.3",
+    "mysql": "^2.2.0"
   }
 }
