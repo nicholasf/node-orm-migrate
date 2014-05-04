@@ -3,17 +3,17 @@
 var program     = require('commander'),
     commands    = require('./../lib/commands');
 
-if (!process.env.DB_URL){
-    console.log("Please define a $DB_URL (e.g. postgresql://user:password@host/db) in your env.\nHow else can I know to connect to your database, eh?");
-    process.exit();
-}
-
 program
   .version('0.0.1')
   .option('-g, --generate', 'Generate a migration')
   .option('-u, --up', 'Run up migrations')
   .option('-d, --down', 'Run down migrations')
   .parse(process.argv);
+
+if (!process.env.DB_URL){
+    console.log("Please define a $DB_URL (e.g. postgresql://user:password@host/db) in your env.\nHow else can I know to connect to your database, eh?");
+    process.exit();
+}
 
 var finish = function(){
     console.log("Done.");

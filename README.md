@@ -1,4 +1,4 @@
-A CLI for https://github.com/locomote/node-migrate-orm2 .
+A command line tool for https://github.com/locomote/node-migrate-orm2 .
 
 ## Installation
 ```
@@ -7,7 +7,19 @@ npm install -g orm-migrate
 
 ## Usage
 
-For help docs run ```migrate --help```.
+```
+♪  node-orm-migrate git:(master) ✗ migrate --help
+
+  Usage: migrate [options]
+
+  Options:
+
+    -h, --help      output usage information
+    -V, --version   output the version number
+    -g, --generate  Generate a migration
+    -u, --up        Run up migrations
+    -d, --down      Run down migrations
+```
 
 Generate a migration:
 
