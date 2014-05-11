@@ -15,7 +15,12 @@ if (!process.env.DB_URL){
     process.exit();
 }
 
-var finish = function(){
+var finish = function(err, result){
+    if (err) {
+      console.log("Err: ", err.stack);
+      return;
+    }
+
     console.log("Done.");
     process.exit();    
 }
